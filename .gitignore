@@ -1,5 +1,5 @@
-# Created by https://www.toptal.com/developers/gitignore/api/git,macos,visualstudiocode
-# Edit at https://www.toptal.com/developers/gitignore?templates=git,macos,visualstudiocode
+# Created by https://www.toptal.com/developers/gitignore/api/git,macos,visualstudiocode,hugo
+# Edit at https://www.toptal.com/developers/gitignore?templates=git,macos,visualstudiocode,hugo
 
 ### Git ###
 # Created by git for backups. To disable backups in Git:
@@ -15,6 +15,21 @@
 *_BASE_*.txt
 *_LOCAL_*.txt
 *_REMOTE_*.txt
+
+### Hugo ###
+# Generated files by hugo
+/public/
+/resources/_gen/
+/assets/jsconfig.json
+hugo_stats.json
+
+# Executable may be added to repository
+hugo.exe
+hugo.darwin
+hugo.linux
+
+# Temporary lock file while building
+/.hugo_build.lock
 
 ### macOS ###
 # General
@@ -68,4 +83,4 @@ Temporary Items
 .history
 .ionide
 
-# End of https://www.toptal.com/developers/gitignore/api/git,macos,visualstudiocode
+# End of https://www.toptal.com/developers/gitignore/api/git,macos,visualstudiocode,hugo
