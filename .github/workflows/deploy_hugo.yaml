@@ -58,7 +58,10 @@ jobs:
           HUGO_ENVIRONMENT: production
           HUGO_ENV: production
         run: |
+          # Change working directory to the blog folder to have relative paths based on the blog folder
           cd blog
+          
+          # Build the Hugo site
           hugo \
             --gc \
             --minify \
