@@ -50,8 +50,10 @@ jobs:
         uses: actions/configure-pages@v3
       - name: Install Node.js dependencies
         run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
-      - name: Ensure public folder exists
-        run: "mkdir -p public"
+      # - name: Ensure public folder exists
+      #   run: "mkdir -p public"
+      - name: Change directory to blog
+        run: "cd blog"
       - name: Build with Hugo
         env:
           # For maximum backward compatibility with Hugo modules
@@ -61,8 +63,7 @@ jobs:
           hugo \
             --gc \
             --minify \
-            --baseURL "${{ steps.pages.outputs.base_url }}/" \
-            --source blog/     
+            --baseURL "${{ steps.pages.outputs.base_url }}/"   
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
