@@ -26,6 +26,7 @@ concurrency:
 defaults:
   run:
     shell: bash
+    working-directory: ./blog
 
 jobs:
   # Build job
@@ -59,8 +60,8 @@ jobs:
           HUGO_ENV: production
         run: |
           # Change working directory to the blog folder to have relative paths based on the blog folder
-          cd blog
-          
+          # cd blog
+
           # Build the Hugo site
           hugo \
             --gc \
@@ -69,7 +70,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          path: ./blog/public
+          path: ./public
 
   # Deployment job
   deploy:
